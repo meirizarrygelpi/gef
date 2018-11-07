@@ -1,3 +1,175 @@
 % Copyright 2018 Melvin Eloy Irizarry-Gelpí
 \chapter{Definitions}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Here are some definitions.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Euler Gamma Function}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+The \textbf{Euler Gamma function} satisfies the property
+\begin{equation}
+    \Gamma(z + 1) = z \Gamma(z)
+\end{equation}
+This expression can be rearranged into
+\begin{equation}
+    \frac{1}{\Gamma(z)} = \frac{z}{\Gamma(z + 1)}
+\end{equation}
+This identity will be used extensively later.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Exponential Function}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+The \textbf{exponential function} can be defined as a power series:
+\begin{equation}
+    \exp(z) = \sum_{n = 0}^{\infty} \frac{1}{\Gamma(n + 1)} z^{n}
+\end{equation}
+Using the above property of the Euler Gamma function, you find the differentiation formula:
+\begin{equation}
+    \partial \exp(z) = \exp(z)
+\end{equation}
+This expression can be rearranged into
+\begin{equation}
+    \left( \partial - 1 \right) \exp(z) = 0
+\end{equation}
+This is a first-order differential equation; there is only one linearly-independent solution.
+
+The \textbf{reciprocal of the exponential function} can be defined as an \textbf{alternating} power series:
+\begin{equation}
+    \exp({-z}) = \sum_{n = 0}^{\infty} \frac{(-1)^{n}}{\Gamma(n + 1)} z^{n}
+\end{equation}
+Using the above property of the Euler Gamma function, you find the differentiation formula:
+\begin{equation}
+    \partial \exp({-z}) = -\exp({-z})
+\end{equation}
+This expression can be rearranged into
+\begin{equation}
+    \left( \partial + 1 \right) \exp({-z}) = 0
+\end{equation}
+This is a first-order differential equation; there is only one linearly-independent solution.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Hyperbolic Functions}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+The two basic \textbf{hyperbolic functions} can be defined as power series:
+\begin{align}
+    \cosh(z) &= \sum_{n = 0}^{\infty} \frac{1}{\Gamma(2n + 1)} z^{2n} & \sinh(z) &= \sum_{n = 0}^{\infty} \frac{1}{\Gamma(2n + 2)} z^{2n + 1}
+\end{align}
+Taking one derivative gives the differentiation formulae:
+\begin{align}
+    \partial \sinh(z) &= \cosh(z) & \partial \cosh(z) &= \sinh(z)
+\end{align}
+Taking two derivatives gives
+\begin{align}
+    \partial^{2} \cosh(z) &= \cosh(z) & \partial^{2} \sinh(z) &= \sinh(z)
+\end{align}
+These expressions can be rearranged into
+\begin{align}
+    \left( \partial^{2} - 1 \right) \cosh(z) &= 0 & \left( \partial^{2} - 1 \right) \sinh(z) &= 0
+\end{align}
+These are second-order differential equations.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Trigonometric Functions}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+The two basic \textbf{trigonometric functions} can be defined as power series:
+\begin{align}
+    \cos(z) &= \sum_{n = 0}^{\infty} \frac{(-1)^{n}}{\Gamma(2n + 1)} z^{2n} & \sin(z) &= \sum_{n = 0}^{\infty} \frac{(-1)^{n}}{\Gamma(2n + 2)} z^{2n + 1}
+\end{align}
+Taking one derivative gives the differentiation formulae:
+\begin{align}
+    \partial \sin(z) &= \cos(z) & \partial \cos(z) &= -\sin(z)
+\end{align}
+Taking two derivatives gives
+\begin{align}
+    \partial^{2} \cos(z) &= -\cos(z) & \partial^{2} \sin(z) &= -\sin(z)
+\end{align}
+These expressions can be rearranged into
+\begin{align}
+    \left( \partial^{2} + 1 \right) \cos(z) &= 0 & \left( \partial^{2} + 1 \right) \sin(z) &= 0
+\end{align}
+These are second-order differential equations.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Mittag-Leffler Function}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+The \textbf{Mittag-Leffler function} is defined as the power series
+\begin{equation}
+    \operatorname{ML}(\alpha, \beta; z) \equiv \sum_{n = 0}^{\infty} \frac{1}{\Gamma(\alpha n + \beta)} z^{n}
+\end{equation}
+All the elementary functions introduced above are special cases of the ML function:
+\begin{align}
+    \exp(z) &= \operatorname{ML}(1, 1; z) \\
+    \cosh(z) &= \operatorname{ML}\left(2, 1; z^{2}\right) \\
+    \sinh(z) &= \operatorname{ML}\left(2, 2; z^{2}\right) \\
+    \exp(-z) &= \operatorname{ML}(1, 1; -z) \\
+    \cos(z) &= \operatorname{ML}\left(2, 1; -z^{2}\right) \\
+    \sin(z) &= \operatorname{ML}\left(2, 2; -z^{2}\right)
+\end{align}
+The ML function satisfies many relations. For example, multiplication by the argument variable gives:
+\begin{equation}
+    z \operatorname{ML}(\alpha, \beta; z) = \operatorname{ML}(\alpha, \beta - \alpha; z) - \frac{1}{\Gamma(\beta - \alpha)}
+\end{equation}
+This expression can be rearranged into
+\begin{equation}
+    \operatorname{ML}(\alpha, \beta - \alpha; z) = z \operatorname{ML}(\alpha, \beta; z) + \frac{1}{\Gamma(\beta - \alpha)}
+\end{equation}
+In a similar way, for $k \geq 1$ you get
+\begin{equation}
+    z^{k} \operatorname{ML}(\alpha, \beta; z) = \operatorname{ML}(\alpha, \beta - k\alpha; z) - \sum_{n = 0}^{k-1} \frac{1}{\Gamma(\alpha n + \beta - k \alpha)} z^{n}
+\end{equation}
+Division by the argument variable gives another set of relations:
+\begin{equation}
+    \frac{1}{z} \operatorname{ML}(\alpha, \beta; z) = \operatorname{ML}(\alpha, \beta + \alpha; z) + \frac{1}{z \Gamma(\beta)}
+\end{equation}
+This expression can be rearranged into
+\begin{equation}
+    \operatorname{ML}(\alpha, \beta; z) = z \operatorname{ML}(\alpha, \beta + \alpha; z) + \frac{1}{\Gamma(\beta)}
+\end{equation}
+In a similar way, for $k \geq 1$ you get
+\begin{equation}
+    \frac{1}{z^{k}} \operatorname{ML}(\alpha, \beta; z) = \operatorname{ML}(\alpha, \beta + k \alpha; z) + \frac{1}{z^{k}} \sum_{n = 0}^{k - 1} \frac{1}{\Gamma(\alpha n + \beta)} z^{n}
+\end{equation}
+Or equivalently
+\begin{equation}
+    \operatorname{ML}(\alpha, \beta; z) = z^{k} \operatorname{ML}(\alpha, \beta + k \alpha; z) + \sum_{n = 0}^{k - 1} \frac{1}{\Gamma(\alpha n + \beta)} z^{n}
+\end{equation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Generalized Mittag-Leffler Functions}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+The \textbf{generalized Mittag-Leffler functions} are defined as the power series:
+\begin{align}
+    \operatorname{GML}(a, b, c, d; z) &\equiv \sum_{n = 0}^{\infty} \frac{1}{\Gamma(a n + b + 1)} z^{cn+d} \\
+    \operatorname{AML}(a, b, c, d; z) &\equiv \sum_{n = 0}^{\infty} \frac{(-1)^{n}}{\Gamma(a n + b + 1)} z^{cn+d}
+\end{align}
+In terms of GML, the ML function can be written as
+\begin{equation}
+    \operatorname{ML}(\alpha, \beta; z) = \operatorname{GML}(\alpha, \beta - 1, 1, 0; z)
+\end{equation}
+Conversely, in terms of ML, the GML and AML functions can be written as
+\begin{align}
+    \operatorname{GML}(a, b, c, d; z) &= z^{d} \operatorname{ML}\left(a, b+1; z^{c}\right) \\
+    \operatorname{AML}(a, b, c, d; z) &= z^{d} \operatorname{ML}\left(a, b+1; -z^{c}\right)
+\end{align}
+In terms of GML and AML, the elementary functions above are given by
+\begin{align}
+    \exp(z) &= \operatorname{GML}(1, 0, 1, 0; z) \\
+    \cosh(z) &= \operatorname{GML}(2, 0, 1, 0; z) \\
+    \sinh(z) &= \operatorname{GML}(2, 1, 2, 1; z) \\
+    \exp(-z) &= \operatorname{AML}(1, 0, 1, 0; z) \\
+    \cos(z) &= \operatorname{AML}(2, 0, 1, 0; z) \\
+    \sin(z) &= \operatorname{AML}(2, 1, 2, 1; z)
+\end{align}
+For simplicity, define the following power series:
+\begin{align}
+    B_{pq}(z) &\equiv \operatorname{GML}(p, q, p, q; z) = \sum_{n = 0}^{\infty} \frac{1}{\Gamma(p n + q + 1)} z^{pn + q} \\
+    A_{pq}(z) &\equiv \operatorname{AML}(p, q, p, q; z) = \sum_{n = 0}^{\infty} \frac{(-1)^{n}}{\Gamma(p n + q + 1)} z^{pn + q}
+\end{align}
+These functions are the solutions to $p$-order differential equations:
+\begin{align}
+    \left( \partial^{p} - 1 \right) B_{pq}(z) &= 0 & \left( \partial^{p} + 1 \right) A_{pq}(z) &= 0 & q &= 0, 1, ..., p -1
+\end{align}
+In terms of these functions, you have
+\begin{align}
+    \exp(z) &= B_{10}(z) \\
+    \cosh(z) &= B_{20}(z) \\
+    \sinh(z) &= B_{21}(z) \\
+    \exp(-z) &= A_{10}(z) \\
+    \cos(z) &= A_{20}(z) \\
+    \sin(z) &= A_{21}(z)
+\end{align}
+The goal of these notes is to present explicit results involving the $B_{pq}(z)$ and $A_{pq}(z)$ functions for other values of $p$ and $q$.
