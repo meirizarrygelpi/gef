@@ -1,3 +1,342 @@
 % Copyright 2018 Melvin Eloy Irizarry-Gelpí
 \chapter{Roots of Unity}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Here are some explicit results regarding roots of unity.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{2-Roots}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+The equation
+\begin{equation}
+    r^{2} - 1 = 0
+\end{equation}
+has two solutions:
+\begin{align}
+    r_{20} &= 1 & r_{21} &= {-1}
+\end{align}
+Note that
+\begin{equation}
+    r_{20} + r_{21} = 0
+\end{equation}
+Both solutions are real.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{4-Roots}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+The equation
+\begin{equation}
+    r^{4} - 1 = 0
+\end{equation}
+has four solutions:
+\begin{align}
+    r_{40} &= 1 & r_{41} &= i & r_{42} &= -1 & r_{43} &= -i
+\end{align}
+Note that
+\begin{align}
+    r_{40} + r_{42} &= 0 & r_{41} + r_{43} &= 0
+\end{align}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{6-Roots}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Let
+\begin{equation}
+    \phi \equiv \exp\left( \frac{\pi i}{3} \right)
+\end{equation}
+Then, the six solutions of the equation
+\begin{equation}
+    r^{6} - 1 = 0
+\end{equation}
+are given by
+\begin{align}
+    r_{60} &= 1 \\
+    r_{61} &= \phi = \frac{1}{2} + \frac{\sqrt{3}}{2}i \\
+    r_{62} &= \phi^{2} = -\frac{1}{2} + \frac{\sqrt{3}}{2}i \\
+    r_{63} &= \phi^{3} = -1 \\
+    r_{64} &= \phi^{4} = -\phi = -\frac{1}{2} - \frac{\sqrt{3}}{2}i \\
+    r_{65} &= \phi^{5} = -\phi^{2} = \frac{1}{2} - \frac{\sqrt{3}}{2}i
+\end{align}
+Note that
+\begin{align}
+    r_{60} + r_{62} + r_{64} &= 0 & r_{61} + r_{63} + r_{65} &= 0
+\end{align}
+as well as
+\begin{align}
+    r_{60} + r_{63} &= 0 & r_{61} + r_{64} &= 0 & r_{62} + r_{65} &= 0
+\end{align}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{8-Roots}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Let
+\begin{equation}
+    \chi \equiv \exp\left( \frac{\pi i}{4} \right)
+\end{equation}
+Then, the eight solutions of the equation
+\begin{equation}
+    r^{8} - 1 = 0
+\end{equation}
+are given by
+\begin{align}
+    r_{80} &= 1 \\
+    r_{81} &= \chi = \frac{1}{\sqrt{2}} + \frac{1}{\sqrt{2}}i \\
+    r_{82} &= \chi^{2} = i \\
+    r_{83} &= \chi^{3} = i \chi = -\frac{1}{\sqrt{2}} + \frac{1}{\sqrt{2}}i \\
+    r_{84} &= \chi^{4} = -1 \\
+    r_{85} &= \chi^{5} = -\chi = -\frac{1}{\sqrt{2}} - \frac{1}{\sqrt{2}}i \\
+    r_{86} &= \chi^{6} = -i \\
+    r_{87} &= \chi^{7} = -i \chi = \frac{1}{\sqrt{2}} - \frac{1}{\sqrt{2}}i
+\end{align}
+Note that
+\begin{align}
+    r_{80} + r_{84} &= 0 & r_{81} + r_{85} &= 0 & r_{82} + r_{86} &= 0 & r_{83} + r_{87} &= 0
+\end{align}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{10-Roots}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Let
+\begin{equation}
+    \psi \equiv \exp\left( \frac{\pi i}{5} \right)
+\end{equation}
+Then, the ten solutions of the equation
+\begin{equation}
+    r^{10} - 1 = 0
+\end{equation}
+are given by
+\begin{align}
+    r_{100} &= 1 \\
+    r_{101} &= \psi = \frac{1}{4} + \frac{\sqrt{5}}{4} + \sqrt{\frac{5}{8} - \frac{\sqrt{5}}{8}} i \\
+    r_{102} &= \psi^{2} = -\frac{1}{4} + \frac{\sqrt{5}}{4} + \sqrt{\frac{5}{8} + \frac{\sqrt{5}}{8}} i \\
+    r_{103} &= \psi^{3} = \frac{1}{4} - \frac{\sqrt{5}}{4} + \sqrt{\frac{5}{8} + \frac{\sqrt{5}}{8}} i \\
+    r_{104} &= \psi^{4} = -\frac{1}{4} - \frac{\sqrt{5}}{4} + \sqrt{\frac{5}{8} - \frac{\sqrt{5}}{8}} i \\
+    r_{105} &= \psi^{5} = -1 \\
+    r_{106} &= \psi^{6} = -\psi = -\frac{1}{4} - \frac{\sqrt{5}}{4} - \sqrt{\frac{5}{8} - \frac{\sqrt{5}}{8}} i \\
+    r_{107} &= \psi^{7} = -\psi^{2} = \frac{1}{4} - \frac{\sqrt{5}}{4} - \sqrt{\frac{5}{8} + \frac{\sqrt{5}}{8}} i \\
+    r_{108} &= \psi^{8} = -\psi^{3} = -\frac{1}{4} + \frac{\sqrt{5}}{4} - \sqrt{\frac{5}{8} + \frac{\sqrt{5}}{8}} i \\
+    r_{109} &= \psi^{9} = -\psi^{4} = \frac{1}{4} + \frac{\sqrt{5}}{4} - \sqrt{\frac{5}{8} - \frac{\sqrt{5}}{8}} i
+\end{align}
+Note that
+\begin{align}
+    r_{100} + r_{102} + r_{104} + r_{106} + r_{108} &= 0 & r_{101} + r_{103} + r_{105} + r_{107} + r_{109} &= 0
+\end{align}
+as well as
+\begin{align}
+    r_{100} + r_{105} &= 0 & r_{101} + r_{106} &= 0 & r_{102} + r_{107} &= 0
+\end{align}
+\begin{align}
+    r_{103} + r_{108} &= 0 & r_{104} + r_{109} &= 0
+\end{align}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{12-Roots}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Let
+\begin{equation}
+    \omega \equiv \exp\left( \frac{\pi i}{6} \right)
+\end{equation}
+Then, the twelve solutions of the equation
+\begin{equation}
+    r^{12} - 1 = 0
+\end{equation}
+are given by
+\begin{align}
+    r_{120} &= 1 \\
+    r_{121} &= \omega = \frac{\sqrt{3}}{2} + \frac{1}{2}i \\
+    r_{122} &= \omega^{2} = \frac{1}{2} + \frac{\sqrt{3}}{2}i = \phi \\
+    r_{123} &= \omega^{3} = i \\
+    r_{124} &= \omega^{4} = i \omega = -\frac{1}{2} + \frac{\sqrt{3}}{2}i = \phi^{2} \\
+    r_{125} &= \omega^{5} = i \omega^{2} = -\frac{\sqrt{3}}{2} + \frac{1}{2}i \\
+    r_{126} &= \omega^{6} = -1 \\
+    r_{127} &= \omega^{7} = -\omega = -\frac{\sqrt{3}}{2} - \frac{1}{2}i \\
+    r_{128} &= \omega^{8} = -\omega^{2} = -\frac{1}{2} - \frac{\sqrt{3}}{2}i = -\phi \\
+    r_{129} &= \omega^{9} = -i \\
+    r_{1210} &= \omega^{10} = -\omega^{4} = -i\omega = \frac{1}{2} - \frac{\sqrt{3}}{2}i = -\phi^{2} \\
+    r_{1211} &= \omega^{11} = -i \omega^{2} = \frac{\sqrt{3}}{2} - \frac{1}{2}i
+\end{align}
+Note that
+\begin{align}
+    r_{120} + r_{124} + r_{128} &= 0 & r_{122} + r_{126} + r_{1210} &= 0
+\end{align}
+as well as
+\begin{align}
+    r_{120} + r_{126} &= 0 & r_{121} + r_{127} &= 0 & r_{122} + r_{128} &= 0 \\
+    r_{123} + r_{129} &= 0 & r_{124} + r_{1210} &= 0 & r_{125} + r_{1211} &= 0
+\end{align}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Discrete Fourier Transforms}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+For future reference, here are some discrete Fourier transforms.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{2-Dimensional}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Consider the following Vandermonde matrix:
+\begin{equation}
+    E_{2} \equiv \begin{bmatrix}
+        r_{40}^{0} & r_{40}^{1} \\ r_{42}^{0} & r_{42}^{1}
+    \end{bmatrix} = \begin{bmatrix}
+        1 & 1 \\
+        1 & -1
+    \end{bmatrix}
+\end{equation}
+Note that
+\begin{equation}
+    \left( E_{2} \right)^{4} = 4 \begin{bmatrix}
+        1 & 0 \\
+        0 & 1
+    \end{bmatrix}
+\end{equation}
+The inverse matrix is given by
+\begin{equation}
+    F_{2} \equiv \left( E_{2} \right)^{-1} = \frac{1}{2} \begin{bmatrix}
+        1 & 1 \\
+        1 & -1
+    \end{bmatrix}
+\end{equation}
+Note that $F_{2}$ is proportional to the hermitian conjugate of $E_{2}$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{3-Dimensional}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Consider the following Vandermonde matrix:
+\begin{equation}
+    E_{3} \equiv \begin{bmatrix}
+        r_{60}^{0} & r_{60}^{1} & r_{60}^{2} \\
+        r_{62}^{0} & r_{62}^{1} & r_{62}^{2} \\
+        r_{64}^{0} & r_{64}^{1} & r_{64}^{2}
+    \end{bmatrix} = \begin{bmatrix}
+        1 & 1 & 1 \\
+        1 & \phi^{2} & -\phi \\
+        1 & -\phi & \phi^{2}
+    \end{bmatrix}
+\end{equation}
+Note that
+\begin{equation}
+    \left( E_{3} \right)^{4} = 9 \begin{bmatrix}
+        1 & 0 & 0 \\
+        0 & 1 & 0 \\
+        0 & 0 & 1
+    \end{bmatrix}
+\end{equation}
+The inverse matrix is given by
+\begin{equation}
+    F_{3} \equiv \left( E_{3} \right)^{-1} = \frac{1}{3} \begin{bmatrix}
+        1 & 1 & 1 \\
+        1 & -\phi & \phi^{2} \\
+        1 & \phi^{2} & -\phi
+    \end{bmatrix}
+\end{equation}
+Note that $F_{3}$ is proportional to the hermitian conjugate of $E_{3}$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{4-Dimensional}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Consider the following Vandermonde matrix:
+\begin{equation}
+    E_{4} \equiv \begin{bmatrix}
+        r_{80}^{0} & r_{80}^{1} & r_{80}^{2} & r_{80}^{3} \\
+        r_{82}^{0} & r_{82}^{1} & r_{82}^{2} & r_{82}^{3} \\
+        r_{84}^{0} & r_{84}^{1} & r_{84}^{2} & r_{84}^{3} \\
+        r_{86}^{0} & r_{86}^{1} & r_{86}^{2} & r_{86}^{3}
+    \end{bmatrix} = \begin{bmatrix}
+        1 & 1 & 1 & 1 \\
+        1 & i & -1 & -i \\
+        1 & -1 & 1 & -1 \\
+        1 & -i & -1 & i
+    \end{bmatrix}
+\end{equation}
+Note that
+\begin{equation}
+    \left( E_{4} \right)^{4} = 16 \begin{bmatrix}
+        1 & 0 & 0 & 0 \\
+        0 & 1 & 0 & 0 \\
+        0 & 0 & 1 & 0 \\
+        0 & 0 & 0 & 1
+    \end{bmatrix}
+\end{equation}
+The inverse matrix is given by
+\begin{equation}
+    F_{4} \equiv \left( E_{4} \right)^{-1} = \frac{1}{4} \begin{bmatrix}
+        1 & 1 & 1 & 1 \\
+        1 & -i & -1 & i \\
+        1 & -1 & 1 & -1 \\
+        1 & i & -1 & -i
+    \end{bmatrix}
+\end{equation}
+Note that $F_{4}$ is proportional to the hermitian conjugate of $E_{4}$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{5-Dimensional}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Consider the following Vandermonde matrix:
+\begin{equation}
+    E_{5} \equiv \begin{bmatrix}
+        r_{100}^{0} & r_{100}^{1} & r_{100}^{2} & r_{100}^{3} & r_{100}^{4} \\
+        r_{102}^{0} & r_{102}^{1} & r_{102}^{2} & r_{102}^{3} & r_{102}^{4} \\
+        r_{104}^{0} & r_{104}^{1} & r_{104}^{2} & r_{104}^{3} & r_{104}^{4} \\
+        r_{106}^{0} & r_{106}^{1} & r_{106}^{2} & r_{106}^{3} & r_{106}^{3} \\
+        r_{108}^{0} & r_{108}^{1} & r_{108}^{2} & r_{108}^{3} & r_{108}^{3}
+    \end{bmatrix} = \begin{bmatrix}
+        1 & 1 & 1 & 1 & 1 \\
+        1 & \psi^{2} & \psi^{4} & -\psi & -\psi^{3} \\
+        1 & \psi^{4} & -\psi^{3} & \psi^{2} & -\psi \\
+        1 & -\psi & \psi^{2} & -\psi^{3} & \psi^{4} \\
+        1 & -\psi^{3} & -\psi & \psi^{4} & \psi^{2}
+    \end{bmatrix}
+\end{equation}
+Note that
+\begin{equation}
+    \left( E_{5} \right)^{4} = 25 \begin{bmatrix}
+        1 & 0 & 0 & 0 & 0 \\
+        0 & 1 & 0 & 0 & 0 \\
+        0 & 0 & 1 & 0 & 0 \\
+        0 & 0 & 0 & 1 & 0 \\
+        0 & 0 & 0 & 0 & 1
+    \end{bmatrix}
+\end{equation}
+The inverse matrix is given by
+\begin{equation}
+    F_{5} \equiv \left( E_{5} \right)^{-1} = \frac{1}{5} \begin{bmatrix}
+        1 & 1 & 1 & 1 & 1 \\
+        1 & -\psi^{3} & -\psi & \psi^{4} & \psi^{2} \\
+        1 & -\psi & \psi^{2} & -\psi^{3} & \psi^{4} \\
+        1 & \psi^{4} & -\psi^{3} & \psi^{2} & -\psi \\
+        1 & \psi^{2} & \psi^{4} & -\psi & -\psi^{3}
+    \end{bmatrix}
+\end{equation}
+Note that $F_{5}$ is proportional to the hermitian conjugate of $E_{5}$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{6-Dimensional}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Consider the following Vandermonde matrix:
+\begin{equation}
+    E_{6} \equiv \begin{bmatrix}
+        r_{120}^{0} & r_{120}^{1} & r_{120}^{2} & r_{120}^{3} & r_{120}^{4} & r_{120}^{5} \\
+        r_{122}^{0} & r_{122}^{1} & r_{122}^{2} & r_{122}^{3} & r_{122}^{4} & r_{122}^{5} \\
+        r_{124}^{0} & r_{124}^{1} & r_{124}^{2} & r_{124}^{3} & r_{124}^{4} & r_{124}^{5} \\
+        r_{126}^{0} & r_{126}^{1} & r_{126}^{2} & r_{126}^{3} & r_{126}^{4} & r_{126}^{5} \\
+        r_{128}^{0} & r_{128}^{1} & r_{128}^{2} & r_{128}^{3} & r_{128}^{4} & r_{128}^{5} \\
+        r_{1210}^{0} & r_{1210}^{1} & r_{1210}^{2} & r_{1210}^{3} & r_{1210}^{4} & r_{1210}^{5}
+    \end{bmatrix} = \begin{bmatrix}
+        1 & 1 & 1 & 1 & 1 & 1 \\
+        1 & \omega^{2} & i\omega & -1 & -\omega^{2} & -i\omega \\
+        1 & i\omega & -\omega^{2} & 1 & i\omega & -\omega^{2} \\
+        1 & -1 & 1 & -1 & 1 & -1 \\
+        1 & -\omega^{2} & i\omega & 1 & -\omega^{2} & i\omega \\
+        1 & -i\omega & -\omega^{2} & -1 & i\omega & \omega^{2}
+    \end{bmatrix}
+\end{equation}
+Note that
+\begin{equation}
+    \left( E_{6} \right)^{4} = 36 \begin{bmatrix}
+        1 & 0 & 0 & 0 & 0 & 0 \\
+        0 & 1 & 0 & 0 & 0 & 0 \\
+        0 & 0 & 1 & 0 & 0 & 0 \\
+        0 & 0 & 0 & 1 & 0 & 0 \\
+        0 & 0 & 0 & 0 & 1 & 0 \\
+        0 & 0 & 0 & 0 & 0 & 1
+    \end{bmatrix}
+\end{equation}
+The inverse matrix is given by
+\begin{equation}
+    F_{6} \equiv \left( E_{6} \right)^{-1} = \frac{1}{6} \begin{bmatrix}
+        1 & 1 & 1 & 1 & 1 & 1 \\
+        1 & -i\omega & -\omega^{2} & -1 & i\omega & \omega^{2} \\
+        1 & -\omega^{2} & i\omega & 1 & -\omega^{2} & i\omega \\
+        1 & -1 & 1 & -1 & 1 & -1 \\
+        1 & i\omega & -\omega^{2} & 1 & i\omega & -\omega^{2} \\
+        1 & \omega^{2} & i\omega & -1 & -\omega^{2} & -i\omega
+    \end{bmatrix}
+\end{equation}
+Note that $F_{6}$ is proportional to the hermitian conjugate of $E_{6}$.

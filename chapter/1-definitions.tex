@@ -63,17 +63,25 @@ These expressions can be rearranged into
 \begin{align}
     \left( \partial^{2} - 1 \right) \cosh(z) &= 0 & \left( \partial^{2} - 1 \right) \sinh(z) &= 0
 \end{align}
-These are second-order differential equations.
+These are second-order differential equations. Indeed, the most general solution to the differential equation
+\begin{equation}
+    \left( \partial^{2} - 1 \right) f(z) = 0
+\end{equation}
+is
+\begin{equation}
+    f(z) = b_{0} \cosh(z) + b_{1} \sinh(z)
+\end{equation}
+These two hyperbolic functions are examples of elementary functions.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Trigonometric Functions}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-The two basic \textbf{trigonometric functions} can be defined as power series:
+The two basic \textbf{trigonometric functions} can be defined as alternating power series:
 \begin{align}
     \cos(z) &= \sum_{n = 0}^{\infty} \frac{(-1)^{n}}{\Gamma(2n + 1)} z^{2n} & \sin(z) &= \sum_{n = 0}^{\infty} \frac{(-1)^{n}}{\Gamma(2n + 2)} z^{2n + 1}
 \end{align}
 Taking one derivative gives the differentiation formulae:
 \begin{align}
-    \partial \sin(z) &= \cos(z) & \partial \cos(z) &= -\sin(z)
+    \partial \cos(z) &= -\sin(z) & \partial \sin(z) &= \cos(z)
 \end{align}
 Taking two derivatives gives
 \begin{align}
@@ -83,7 +91,15 @@ These expressions can be rearranged into
 \begin{align}
     \left( \partial^{2} + 1 \right) \cos(z) &= 0 & \left( \partial^{2} + 1 \right) \sin(z) &= 0
 \end{align}
-These are second-order differential equations.
+These are second-order differential equations. Indeed, the most general solution to the differential equation
+\begin{equation}
+    \left( \partial^{2} + 1 \right) f(z) = 0
+\end{equation}
+is
+\begin{equation}
+    f(z) = a_{0} \cos(z) + a_{1} \sin(z)
+\end{equation}
+These two trigonometric functions are also examples of elementary functions.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Mittag-Leffler Function}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -159,9 +175,19 @@ For simplicity, define the following power series:
     B_{pq}(z) &\equiv \operatorname{GML}(p, q, p, q; z) = \sum_{n = 0}^{\infty} \frac{1}{\Gamma(p n + q + 1)} z^{pn + q} \\
     A_{pq}(z) &\equiv \operatorname{AML}(p, q, p, q; z) = \sum_{n = 0}^{\infty} \frac{(-1)^{n}}{\Gamma(p n + q + 1)} z^{pn + q}
 \end{align}
-These functions are the solutions to $p$-order differential equations:
+These functions are solutions to $p$-order differential equations:
 \begin{align}
     \left( \partial^{p} - 1 \right) B_{pq}(z) &= 0 & \left( \partial^{p} + 1 \right) A_{pq}(z) &= 0 & q &= 0, 1, ..., p -1
+\end{align}
+Indeed, if
+\begin{align}
+    f(z) &= \sum_{q = 0}^{p-1} b_{q} B_{pq}(z) \\
+    g(z) &= \sum_{q = 0}^{p-1} a_{q} A_{pq}(z)
+\end{align}
+then
+\begin{align}
+    \left( \partial^{p} - 1 \right) f(z) &= 0 \\
+    \left( \partial^{p} + 1 \right) g(z) &= 0
 \end{align}
 In terms of these functions, you have
 \begin{align}
@@ -172,4 +198,4 @@ In terms of these functions, you have
     \cos(z) &= A_{20}(z) \\
     \sin(z) &= A_{21}(z)
 \end{align}
-The goal of these notes is to present explicit results involving the $B_{pq}(z)$ and $A_{pq}(z)$ functions for other values of $p$ and $q$.
+The goal of these notes is to present explicit results involving the $B_{pq}(z)$ and $A_{pq}(z)$ functions for other values of $p$ and $q$. In this way, you can generalize these elementary functions.
