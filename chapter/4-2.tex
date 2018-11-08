@@ -1,3 +1,222 @@
 % Copyright 2018 Melvin Eloy Irizarry-Gelpí
-\chapter{Hyperbolic-2 Functions}
+\chapter{2-Hyperbolic Functions}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+The 2-hyperbolic functions are the familiar hyperbolic cosine and sine functions.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Definition}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+The 2-hyperbolic functions are
+\begin{align}
+    B_{20}(z) &= \sum_{n = 0}^{\infty} \frac{1}{\Gamma\left(2n+1\right)} z^{2n} \\
+    B_{21}(z) &= z \sum_{n = 0}^{\infty} \frac{1}{\Gamma\left(2n+2\right)} z^{2n}
+\end{align}
+These two functions are the familiar hyperbolic cosine and sine functions. Here is a (long winded) way to establish the relation between these functions and the exponential function. First, consider the following relations:
+\begin{align}
+    \exp\left( r_{40} z \right) &= B_{20}(z) + B_{21}(z) \\
+    \exp\left( r_{42} z \right) &= B_{20}(z) - B_{21}(z)
+\end{align}
+Here the $r_{mn}$ are defined in (\ref{eq.2.r4}). This system of equations can be stated as a matrix equation:
+\begin{equation}
+    \begin{bmatrix}
+        \exp\left( r_{40} z \right) \\ \exp\left( r_{42} z \right)
+    \end{bmatrix} = 
+    \begin{bmatrix}
+        1 & 1 \\ 1 & -1
+    \end{bmatrix}
+    \begin{bmatrix}
+        B_{20}(z) \\ B_{21}(z)
+    \end{bmatrix}
+\end{equation}
+You can recognize the matrix $E_{2}$ from (\ref{eq.2.E2}). Inverting this matrix gives
+\begin{equation}
+    \begin{bmatrix}
+        B_{20}(z) \\ B_{21}(z)
+    \end{bmatrix} = \frac{1}{2}
+    \begin{bmatrix}
+        1 & 1 \\ 1 & -1
+    \end{bmatrix}
+    \begin{bmatrix}
+        \exp\left( r_{40} z \right) \\ \exp\left( r_{42} z \right)
+    \end{bmatrix}
+\end{equation}
+You can recognize the matrix $F_{2}$ from (\ref{eq.2.F2}).
+
+Explicitly, you have
+\begin{align}
+    B_{20}(z) &= \cosh(z) \\ B_{21}(z) &= \sinh(z)
+\end{align}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Properties}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Here are some important properties.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Special Values}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Note that
+\begin{align}
+    B_{20}(z) &= 1 & B_{21}(z) &= 0
+\end{align}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Real and Imaginary Parts}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Let $x$ and $y$ be real variables. The real and imaginary parts of $B_{20}$ are
+\begin{align}
+    \Re\left[ B_{20}(x + yi) \right] &= \cosh(x) \cos(y) \\
+    \Im\left[ B_{20}(x + yi) \right] &= \sinh(x) \sin(y)
+\end{align}
+The real and imaginary parts of $B_{21}$ are
+\begin{align}
+    \Re\left[ B_{21}(x + yi) \right] &= \sinh(x) \cos(y) \\
+    \Im\left[ B_{21}(x + yi) \right] &= \cosh(x) \sin(y)
+\end{align}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Anti-Periodicity}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Both $B_{20}$ and $B_{21}$ are anti-periodic:
+\begin{align}
+    B_{20}(z + \pi i) + B_{20}(z) &= 0 & B_{21}(z + \pi i) + B_{21}(z) &= 0
+\end{align}
+The anti-period is $\pi i$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Periodicity}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Both $B_{20}$ and $B_{21}$ are periodic:
+\begin{align}
+    B_{20}(z + 2\pi i) - B_{20}(z) &= 0 & B_{21}(z + 2\pi i) - B_{21}(z) &= 0
+\end{align}
+The period is $2\pi i$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Identities}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Here are some important identities.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Addition Formulae}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+The addition formulae are
+\begin{align}
+    B_{20}(x + y) &= B_{20}(x) B_{20}(y) + B_{21}(x) B_{21}(y) \\
+    B_{21}(x + y) &= B_{20}(x) B_{21}(y) + B_{21}(x) B_{20}(y)
+\end{align}
+These formulae can be found as follows. Let $V$ be a square matrix such that
+\begin{equation}
+    V^{2} = I
+\end{equation}
+with $I$ the identity matrix. Then
+\begin{align}
+    \exp\left( r_{40} z V \right) &= \sum_{n = 0}^{\infty} \frac{1}{\Gamma(2n + 1)} z^{2n} V^{2n} + z V \sum_{n = 0}^{\infty} \frac{1}{\Gamma(2n + 2)} z^{2n} V^{2n} \\ &= I B_{20}(z) + V B_{21}(z) \\
+    \exp\left( r_{42} z V \right) &= \sum_{n = 0}^{\infty} \frac{1}{\Gamma(2n + 1)} z^{2n} V^{2n} - z V \sum_{n = 0}^{\infty} \frac{1}{\Gamma(2n + 2)} z^{2n} V^{2n} \\ &= I B_{20}(z) - V B_{21}(z)
+\end{align}
+Using the identity
+\begin{equation}
+    \exp\left( r_{40} x V \right) \exp\left( r_{40} y V \right) = \exp\left( r_{40} (x + y) V \right)
+\end{equation}
+you can find the above formulae.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{de Moivre Scaling Formulae}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+For the 2-hyperbolic case, the de Moivre scale factor is
+\begin{equation}
+    r_{41} = i
+\end{equation}
+This leads to the following de Moivre scaling formulae:
+\begin{align}
+    B_{20}\left( r_{41}  z\right) &= \sum_{n = 0}^{\infty} \frac{(-1)^{n}}{\Gamma\left(2n + 1\right)} z^{2n} = A_{20}(z) = \cos(z) \\
+    B_{21}\left( r_{41}  z\right) &= i z \sum_{n = 0}^{\infty} \frac{(-1)^{n}}{\Gamma\left(2n + 2\right)} z^{2n} = iA_{21}(z) = i \sin(z)
+\end{align}
+These are the familiar relations between hyperbolic and trigonometric functions.
+
+A second de Moivre scaling gives parity formulae:
+\begin{align}
+    B_{20}\left( r_{41}^{2}  z\right) &= \sum_{n = 0}^{\infty} \frac{1}{\Gamma\left(2n + 1\right)} z^{2n} = B_{20}(z) \\
+    B_{21}\left( r_{41}^{2}  z\right) &= {-z} \sum_{n = 0}^{\infty} \frac{1}{\Gamma\left(2n + 2\right)} z^{2n} = -B_{21}(z)
+\end{align}
+Finally, the third de Moivre scaling gives:
+\begin{align}
+    B_{20}\left( r_{41}^{3}  z\right) &= \sum_{n = 0}^{\infty} \frac{(-1)^{n}}{\Gamma\left(2n + 1\right)} z^{2n} = A_{20}(z) \\
+    B_{21}\left( r_{41}^{3}  z\right) &= -i z \sum_{n = 0}^{\infty} \frac{(-1)^{n}}{\Gamma\left(2n + 2\right)} z^{2n} = -iA_{21}(z)
+\end{align}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Differentiation Formulae}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+The first-order differentiation formulae are
+\begin{align}
+    \partial B_{20} &= B_{21} & \partial B_{21} &= B_{20}
+\end{align}
+The second-order differentiation formulae are
+\begin{align}
+    \partial^{2} B_{20} &= B_{20} & \partial^{2} B_{21} &= B_{21}
+\end{align}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Wronskian}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+With two functions you can have only one Wronskian:
+\begin{equation}
+    W_{201} = \begin{vmatrix}
+        B_{20} & B_{21} \\ \partial B_{20} & \partial B_{21}
+    \end{vmatrix} = \left( B_{20} \right)^{2} - \left( B_{21} \right)^{2}
+\end{equation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Algebraic Formulae}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Recall that
+\begin{equation}
+    r_{40} + r_{42} = 0
+\end{equation}
+Let $V$ be a square matrix such that
+\begin{equation}
+    V^{2} = I
+\end{equation}
+with $I$ the identity matrix. Then
+\begin{equation}
+    \exp\left(r_{40} z V\right) \exp\left(r_{42} z V\right) = I
+\end{equation}
+This translates to
+\begin{equation}
+    \left( B_{20} \right)^{2} - \left( B_{21} \right)^{2} = 1
+\end{equation}
+which is the familiar hyperbola relation:
+\begin{equation}
+    \cosh^{2}(z) - \sinh^{2}(z) = 1
+\end{equation}
+Note that this means that $W_{201} = 1$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Finite Ratio}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Note that, for any real value $x$, you have
+\begin{equation}
+    B_{20}(x) \geq 1
+\end{equation}
+Thus, the following ratio is always finite along $\mathbb{R}$:
+\begin{equation}
+    T_{210}(z) \equiv \frac{B_{21}(z)}{B_{20}(z)} = \tanh(z)
+\end{equation}
+The first derivative of this ratio gives
+\begin{equation}
+    \partial T_{210} = 1 - \left( T_{210} \right)^{2}
+\end{equation}
+The second derivative of this ratio gives
+\begin{equation}
+    \partial^{2} T_{210} = -2 T_{210} + 2\left( T_{210} \right)^{3}
+\end{equation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Reciprocals}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+The reciprocals are
+\begin{align}
+    S_{20}(z) \equiv \frac{1}{B_{20}(z)} &= \operatorname{sech}(z) \\
+    S_{21}(z) \equiv \frac{1}{B_{21}(z)} &= \operatorname{csch}(z)
+\end{align}
+Since $B_{20}$ is non-zero along $\mathbb{R}$, $S_{20}$ is a good candidate for a probability distribution. Indeed,
+\begin{equation}
+    \int\limits_{-\infty}^{\infty} \mathrm{d}x S_{20}(x) = \pi
+\end{equation}
+The reciprocal of the ratio is
+\begin{equation}
+    C_{201}(z) \equiv \frac{1}{T_{210}(z)} = \frac{B_{20}(z)}{B_{21}(z)} = \operatorname{coth}(z)
+\end{equation}
+The first derivative of these reciprocals give
+\begin{align}
+    \partial S_{20} &= -S_{20} T_{210} \\
+    \partial S_{21} &= -S_{21} C_{201} \\
+    \partial C_{201} &= 1 - \left( C_{201} \right)^{2}
+\end{align}
