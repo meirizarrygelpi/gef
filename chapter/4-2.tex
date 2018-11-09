@@ -8,17 +8,17 @@ The 2-hyperbolic functions are the familiar hyperbolic cosine and sine functions
 The 2-hyperbolic functions are
 \begin{align}
     B_{20}(z) &= \sum_{n = 0}^{\infty} \frac{1}{\Gamma\left(2n+1\right)} z^{2n} \\
-    B_{21}(z) &= z \sum_{n = 0}^{\infty} \frac{1}{\Gamma\left(2n+2\right)} z^{2n}
+    B_{21}(z) &= \sum_{n = 0}^{\infty} \frac{1}{\Gamma\left(2n+2\right)} z^{2n+1}
 \end{align}
 These two functions are the familiar hyperbolic cosine and sine functions. Here is a (long winded) way to establish the relation between these functions and the exponential function. First, consider the following relations:
 \begin{align}
-    \exp\left( r_{40} z \right) &= B_{20}(z) + B_{21}(z) \\
-    \exp\left( r_{42} z \right) &= B_{20}(z) - B_{21}(z)
+    \exp\left( z \right) &= B_{20}(z) + B_{21}(z) \\
+    \exp\left( -z \right) &= B_{20}(z) - B_{21}(z)
 \end{align}
 Here the $r_{mn}$ are defined in (\ref{eq.2.r4}). This system of equations can be stated as a matrix equation:
 \begin{equation}
     \begin{bmatrix}
-        \exp\left( r_{40} z \right) \\ \exp\left( r_{42} z \right)
+        \exp\left( z \right) \\ \exp\left( -z \right)
     \end{bmatrix} = 
     \begin{bmatrix}
         1 & 1 \\ 1 & -1
@@ -36,14 +36,15 @@ You can recognize the matrix $E_{2}$ from (\ref{eq.2.E2}). Inverting this matrix
         1 & 1 \\ 1 & -1
     \end{bmatrix}
     \begin{bmatrix}
-        \exp\left( r_{40} z \right) \\ \exp\left( r_{42} z \right)
+        \exp\left( z \right) \\ \exp\left( -z \right)
     \end{bmatrix}
 \end{equation}
 You can recognize the matrix $F_{2}$ from (\ref{eq.2.F2}).
 
 Explicitly, you have
 \begin{align}
-    B_{20}(z) &= \cosh(z) \\ B_{21}(z) &= \sinh(z)
+    B_{20}(z) &= \frac{1}{2} \left[ \exp(z) + \exp(-z) \right] = \cosh(z) \\
+    B_{21}(z) &= \frac{1}{2} \left[ \exp(z) - \exp(-z) \right] = \sinh(z)
 \end{align}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Properties}
@@ -103,12 +104,12 @@ These formulae can be found as follows. Let $V$ be a square matrix such that
 \end{equation}
 with $I$ the identity matrix. Then
 \begin{align}
-    \exp\left( r_{40} z V \right) &= \sum_{n = 0}^{\infty} \frac{1}{\Gamma(2n + 1)} z^{2n} V^{2n} + z V \sum_{n = 0}^{\infty} \frac{1}{\Gamma(2n + 2)} z^{2n} V^{2n} \\ &= I B_{20}(z) + V B_{21}(z) \\
-    \exp\left( r_{42} z V \right) &= \sum_{n = 0}^{\infty} \frac{1}{\Gamma(2n + 1)} z^{2n} V^{2n} - z V \sum_{n = 0}^{\infty} \frac{1}{\Gamma(2n + 2)} z^{2n} V^{2n} \\ &= I B_{20}(z) - V B_{21}(z)
+    \exp\left( z V \right) &= \sum_{n = 0}^{\infty} \frac{1}{\Gamma(2n + 1)} z^{2n} V^{2n} + \sum_{n = 0}^{\infty} \frac{1}{\Gamma(2n + 2)} z^{2n+1} V^{2n+1} \\ &= I B_{20}(z) + V B_{21}(z) \\
+    \exp\left( -z V \right) &= \sum_{n = 0}^{\infty} \frac{1}{\Gamma(2n + 1)} z^{2n} V^{2n} - \sum_{n = 0}^{\infty} \frac{1}{\Gamma(2n + 2)} z^{2n+1} V^{2n+1} \\ &= I B_{20}(z) - V B_{21}(z)
 \end{align}
 Using the identity
 \begin{equation}
-    \exp\left( r_{40} x V \right) \exp\left( r_{40} y V \right) = \exp\left( r_{40} (x + y) V \right)
+    \exp\left( x V \right) \exp\left( y V \right) = \exp\left( xV + yV \right)
 \end{equation}
 you can find the above formulae.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -120,20 +121,20 @@ For the 2-hyperbolic case, the de Moivre scale factor is
 \end{equation}
 This leads to the following de Moivre scaling formulae:
 \begin{align}
-    B_{20}\left( r_{41}  z\right) &= \sum_{n = 0}^{\infty} \frac{(-1)^{n}}{\Gamma\left(2n + 1\right)} z^{2n} = A_{20}(z) = \cos(z) \\
-    B_{21}\left( r_{41}  z\right) &= i z \sum_{n = 0}^{\infty} \frac{(-1)^{n}}{\Gamma\left(2n + 2\right)} z^{2n} = iA_{21}(z) = i \sin(z)
+    B_{20}\left( i  z\right) &= \sum_{n = 0}^{\infty} \frac{(-1)^{n}}{\Gamma\left(2n + 1\right)} z^{2n} = A_{20}(z) = \cos(z) \\
+    B_{21}\left( i  z\right) &= i \sum_{n = 0}^{\infty} \frac{(-1)^{n}}{\Gamma\left(2n + 2\right)} z^{2n+1} = iA_{21}(z) = i \sin(z)
 \end{align}
 These are the familiar relations between hyperbolic and trigonometric functions.
 
 A second de Moivre scaling gives parity formulae:
 \begin{align}
-    B_{20}\left( r_{41}^{2}  z\right) &= \sum_{n = 0}^{\infty} \frac{1}{\Gamma\left(2n + 1\right)} z^{2n} = B_{20}(z) \\
-    B_{21}\left( r_{41}^{2}  z\right) &= {-z} \sum_{n = 0}^{\infty} \frac{1}{\Gamma\left(2n + 2\right)} z^{2n} = -B_{21}(z)
+    B_{20}\left( -z\right) &= \sum_{n = 0}^{\infty} \frac{1}{\Gamma\left(2n + 1\right)} z^{2n} = B_{20}(z) \\
+    B_{21}\left( -z\right) &= -\sum_{n = 0}^{\infty} \frac{1}{\Gamma\left(2n + 2\right)} z^{2n+1} = -B_{21}(z)
 \end{align}
 Finally, the third de Moivre scaling gives:
 \begin{align}
-    B_{20}\left( r_{41}^{3}  z\right) &= \sum_{n = 0}^{\infty} \frac{(-1)^{n}}{\Gamma\left(2n + 1\right)} z^{2n} = A_{20}(z) \\
-    B_{21}\left( r_{41}^{3}  z\right) &= -i z \sum_{n = 0}^{\infty} \frac{(-1)^{n}}{\Gamma\left(2n + 2\right)} z^{2n} = -iA_{21}(z)
+    B_{20}\left( -i  z\right) &= \sum_{n = 0}^{\infty} \frac{(-1)^{n}}{\Gamma\left(2n + 1\right)} z^{2n} = A_{20}(z) \\
+    B_{21}\left( -i  z\right) &= -i \sum_{n = 0}^{\infty} \frac{(-1)^{n}}{\Gamma\left(2n + 2\right)} z^{2n+1} = -iA_{21}(z)
 \end{align}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Differentiation Formulae}
@@ -149,12 +150,15 @@ The second-order differentiation formulae are
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Wronskian}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-With two functions you can have only one Wronskian:
+With two 2-hyperbolic functions you can have only one $2 \times 2$ Wronskian:
 \begin{equation}
     W_{201} = \begin{vmatrix}
         B_{20} & B_{21} \\ \partial B_{20} & \partial B_{21}
+    \end{vmatrix} = \begin{vmatrix}
+        B_{20} & B_{21} \\ B_{21} & B_{20}
     \end{vmatrix} = \left( B_{20} \right)^{2} - \left( B_{21} \right)^{2}
 \end{equation}
+Note that the Wronskian matrix is a Toeplitz matrix.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Algebraic Formulae}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -180,43 +184,57 @@ which is the familiar hyperbola relation:
 \end{equation}
 Note that this means that $W_{201} = 1$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Finite Ratio}
+\subsection{Finite Quotient}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Note that, for any real value $x$, you have
 \begin{equation}
     B_{20}(x) \geq 1
 \end{equation}
-Thus, the following ratio is always finite along $\mathbb{R}$:
+Thus, the following quotient is finite along $\mathbb{R}$:
 \begin{equation}
-    T_{210}(z) \equiv \frac{B_{21}(z)}{B_{20}(z)} = \tanh(z)
+    Q_{210}(z) \equiv \frac{B_{21}(z)}{B_{20}(z)} = \tanh(z)
 \end{equation}
-The first derivative of this ratio gives
+The first derivative of this quotient gives
 \begin{equation}
-    \partial T_{210} = 1 - \left( T_{210} \right)^{2}
+    \partial Q_{210} = 1 - \left( Q_{210} \right)^{2}
 \end{equation}
-The second derivative of this ratio gives
+The second derivative of this quotient gives
 \begin{equation}
-    \partial^{2} T_{210} = -2 T_{210} + 2\left( T_{210} \right)^{3}
+    \partial^{2} Q_{210} = -2 Q_{210} + 2\left( Q_{210} \right)^{3}
 \end{equation}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Reciprocals}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 The reciprocals are
 \begin{align}
-    S_{20}(z) \equiv \frac{1}{B_{20}(z)} &= \operatorname{sech}(z) \\
-    S_{21}(z) \equiv \frac{1}{B_{21}(z)} &= \operatorname{csch}(z)
+    R_{20}(z) \equiv \frac{1}{B_{20}(z)} &= \operatorname{sech}(z) \\
+    R_{21}(z) \equiv \frac{1}{B_{21}(z)} &= \operatorname{csch}(z)
 \end{align}
-Since $B_{20}$ is non-zero along $\mathbb{R}$, $S_{20}$ is a good candidate for a probability distribution. Indeed,
+Since $B_{20}$ is non-zero along $\mathbb{R}$, $R_{20}$ is a good candidate for a probability distribution. Indeed,
 \begin{equation}
-    \int\limits_{-\infty}^{\infty} \mathrm{d}x S_{20}(x) = \pi
+    \int\limits_{-\infty}^{\infty} \mathrm{d}x R_{20}(x) = \pi
 \end{equation}
-The reciprocal of the ratio is
+The reciprocal of the above quotient is
 \begin{equation}
-    C_{201}(z) \equiv \frac{1}{T_{210}(z)} = \frac{B_{20}(z)}{B_{21}(z)} = \operatorname{coth}(z)
+    Q_{201}(z) \equiv \frac{1}{Q_{210}(z)} = \frac{B_{20}(z)}{B_{21}(z)} = \operatorname{coth}(z)
 \end{equation}
 The first derivative of these reciprocals give
 \begin{align}
-    \partial S_{20} &= -S_{20} T_{210} \\
-    \partial S_{21} &= -S_{21} C_{201} \\
-    \partial C_{201} &= 1 - \left( C_{201} \right)^{2}
+    \partial R_{20} &= -R_{20} Q_{210} \\
+    \partial R_{21} &= -R_{21} Q_{201} \\
+    \partial Q_{201} &= 1 - \left( Q_{201} \right)^{2}
 \end{align}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Cardinal Function}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+You can define one cardinal function:
+\begin{equation}
+    C_{21}(z) \equiv \frac{B_{21}(z)}{z} = \sum_{n = 0}^{\infty} \frac{1}{\Gamma(2n+2)} z^{2n}
+\end{equation}
+This function is non-zero over $\mathbb{R}$.
+
+The reciprocal of the cardinal function,
+\begin{equation}
+    D_{21}(z) \equiv \frac{1}{C_{21}(z)} = \frac{z}{B_{21}(z)}
+\end{equation}
+is another good candidate for a probability distribution.

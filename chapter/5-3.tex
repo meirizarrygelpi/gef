@@ -1,11 +1,63 @@
 % Copyright 2018 Melvin Eloy Irizarry-Gelpí
 \chapter{3-Exponential Functions}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-...
+The three 3-exponential functions are the first and simplest generalization. These functions are more similar to the 1-exponential functions than to the 2-hyperbolic functions.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Definition}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-...
+The 3-exponential functions are
+\begin{align}
+    B_{30}(z) & = \sum_{n = 0}^{\infty} \frac{1}{\Gamma(3n + 1)} z^{3n} \\
+	B_{31}(z) & = \sum_{n = 0}^{\infty} \frac{1}{\Gamma(3n + 2)} z^{3n+1} \\
+	B_{32}(z) & = \sum_{n = 0}^{\infty} \frac{1}{\Gamma(3n + 3)} z^{3n+2}
+\end{align}
+These functions can be written in terms of elementary functions as follows.
+
+Consider the following identities:
+\begin{align}
+    \exp\left( z \right) &= B_{30}(z) + B_{31}(z) + B_{32}(z) \\
+    \exp\left( \phi^{2} z \right) &= B_{30}(z) + \phi^{2} B_{31}(z) - \phi B_{32}(z) \\
+    \exp\left( -\phi z \right) &= B_{30}(z) - \phi B_{31}(z) + \phi^{2} B_{32}(z)
+\end{align}
+Here $\phi$ is the complex number defined in (\ref{eq.2.phi}). This system of equations can be stated as a matrix equation:
+\begin{equation}
+    \begin{bmatrix}
+        \exp\left( z \right) \\ \exp\left( \phi^{2} z \right) \\ \exp\left( -\phi z \right)
+    \end{bmatrix} = \begin{bmatrix}
+        1 & 1 & 1 \\ 1 & \phi^{2} & {-\phi} \\ 1 & {-\phi} & \phi^{2}
+    \end{bmatrix}
+    \begin{bmatrix}
+        B_{30}(z) \\ B_{31}(z) \\ B_{32}(z)
+    \end{bmatrix}
+\end{equation}
+You can recognize the matrix $E_{3}$ from (\ref{eq.2.E3}). Inverting this matrix gives
+\begin{equation}
+    \begin{bmatrix}
+        B_{30}(z) \\ B_{31}(z) \\ B_{32}(z)
+    \end{bmatrix} = \frac{1}{3} \begin{bmatrix}
+        1 & 1 & 1 \\ 1 & {-\phi} & \phi^{2} \\ 1 & \phi^{2} & {-\phi}
+    \end{bmatrix}
+    \begin{bmatrix}
+        \exp\left( z \right) \\ \exp\left( \phi^{2} z \right) \\ \exp\left( -\phi z \right)
+    \end{bmatrix}
+\end{equation}
+You can recognize the matrix $F_{3}$ from (\ref{eq.2.F3}). Explicitly
+\begin{align}
+    B_{30}(z) &= \frac{1}{3} \left[ \exp(z) + \exp\left(\phi^{2} z\right) + \exp\left(-\phi z\right) \right] \\
+    B_{31}(z) &= \frac{1}{3} \left[ \exp(z) - \phi \exp\left(\phi^{2} z\right) + \phi^{2}\exp\left(-\phi z\right) \right] \\
+    B_{32}(z) &= \frac{1}{3} \left[ \exp(z) + \phi^{2} \exp\left(\phi^{2} z\right) - \phi \exp\left(-\phi z\right) \right]
+\end{align}
+Using the fact that
+\begin{align}
+    \exp\left( \phi^{2} z \right) &= \exp\left(-\frac{z}{2}\right) \left[ \cos\left( \frac{\sqrt{3}}{2}z \right) + i \sin\left( \frac{\sqrt{3}}{2}z \right) \right] \\
+    \exp\left( -\phi z \right) &= \exp\left(-\frac{z}{2}\right) \left[ \cos\left( \frac{\sqrt{3}}{2}z \right) - i \sin\left( \frac{\sqrt{3}}{2}z \right) \right]
+\end{align}
+You find
+\begin{align}
+    B_{30}(z) &= \frac{1}{3} \exp(z) + \frac{2}{3} \exp\left( -\frac{z}{2} \right) \cos\left( \frac{\sqrt{3}}{2} z \right) \\
+    B_{31}(z) &= \frac{1}{3} \exp(z) - \frac{1}{3} \exp\left( -\frac{z}{2} \right) \cos\left( \frac{\sqrt{3}}{2} z \right) + \frac{1}{\sqrt{3}} \exp\left( -\frac{z}{2} \right) \sin\left( \frac{\sqrt{3}}{2} z \right) \\
+    B_{32}(z) &= \frac{1}{3} \exp(z) - \frac{1}{3} \exp\left( -\frac{z}{2} \right) \cos\left( \frac{\sqrt{3}}{2} z \right) - \frac{1}{\sqrt{3}} \exp\left( -\frac{z}{2} \right) \sin\left( \frac{\sqrt{3}}{2} z \right)
+\end{align}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Properties}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -13,7 +65,12 @@ Here are some important properties.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Special Values}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-...
+Note that
+\begin{align}
+    B_{30}(0) &= 1 \\
+    B_{31}(0) &= 0 \\
+    B_{32}(0) &= 0
+\end{align}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Real and Imaginary Parts}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -33,20 +90,90 @@ Here are some important identities.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Addition Formulae}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-...
+The addition formulae are
+\begin{align}
+    B_{30}(x + y) &= B_{30}(x) B_{30}(y) + B_{31}(x) B_{32}(y) + B_{32}(x) B_{31}(y) \\
+    B_{31}(x + y) &= B_{30}(x) B_{31}(y) + B_{31}(x) B_{30}(y) + B_{32}(x) B_{32}(y) \\
+    B_{32}(x + y) &= B_{30}(x) B_{32}(y) + B_{31}(x) B_{31}(y) + B_{32}(x) B_{30}(y)
+\end{align}
+These formulae can be found as follows. Let $V$ be a square matrix such that
+\begin{equation}
+    V^{3} = I
+\end{equation}
+with $I$ the identity matrix. Then
+\begin{equation}
+    \exp\left( z V \right) = I B_{30}(z) + V B_{31}(z) + V^{2} B_{32}(z)
+\end{equation}
+Using the identity
+\begin{equation}
+    \exp\left( x V \right) \exp\left( y V \right) = \exp\left( xV + yV \right)
+\end{equation}
+you can find the above formulae.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{de Moivre Scaling Formulae}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-...
+For the 3-exponential case, the de Moivre scale factor is
+\begin{equation}
+    r_{61} = \phi = \frac{1}{2} + \frac{\sqrt{3}}{2}i
+\end{equation}
+This leads to the following de Moivre scaling formulae:
+\begin{align}
+    B_{30}(\phi z) &= \sum_{n = 0}^{\infty} \frac{(-1)^{n}}{\Gamma\left(3n + 1\right)} z^{3n} = A_{30}(z) \\
+    B_{31}(\phi z) &= \phi \sum_{n = 0}^{\infty} \frac{(-1)^{n}}{\Gamma\left(3n + 2\right)} z^{3n+1} = \phi A_{31}(z) \\
+    B_{32}(\phi z) &= \phi^{2} \sum_{n = 0}^{\infty} \frac{(-1)^{n}}{\Gamma\left(3n + 3\right)} z^{3n+2} = \phi^{2} A_{30}(z)
+\end{align}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Differentiation Formulae}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-...
+The first-order differentiation formulae are
+\begin{align}
+    \partial B_{30} &= B_{32} & \partial B_{31} &= B_{30} & \partial B_{32} &= B_{31}
+\end{align}
+The second-order differentiation formulae are
+\begin{align}
+    \partial^{2} B_{30} &= B_{31} & \partial^{2} B_{31} &= B_{32} & \partial^{2} B_{32} &= B_{30}
+\end{align}
+The third-order differentiation formulae are
+\begin{align}
+    \partial^{3} B_{30} &= B_{30} & \partial^{3} B_{31} &= B_{31} & \partial^{3} B_{32} &= B_{32}
+\end{align}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Wronskians}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-...
+With three 3-exponential functions, you can have three $2 \times 2$ Wronskians and one $3 \times 3$ Wronskian.
+
+The $2 \times 2$ Wronskians are
+\begin{align}
+    W_{301} &= \begin{vmatrix}
+        B_{30} & B_{31} \\ \partial B_{30} & \partial B_{31}
+    \end{vmatrix} = \begin{vmatrix}
+        B_{30} & B_{31} \\ B_{32} & B_{30}
+    \end{vmatrix} = \left(B_{30}\right)^{2} - B_{31} B_{32} \\
+    W_{312} &= \begin{vmatrix}
+        B_{31} & B_{32} \\ \partial B_{31} & \partial B_{32}
+    \end{vmatrix} = \begin{vmatrix}
+        B_{31} & B_{32} \\ B_{30} & B_{31}
+    \end{vmatrix} = \left(B_{31}\right)^{2} - B_{30} B_{32} \\
+    W_{320} &= \begin{vmatrix}
+        B_{32} & B_{30} \\ \partial B_{32} & \partial B_{30}
+    \end{vmatrix} = \begin{vmatrix}
+        B_{32} & B_{30} \\ B_{31} & B_{32}
+    \end{vmatrix} = \left(B_{32}\right)^{2} - B_{30} B_{31}
+\end{align}
+The $3 \times 3$ Wronskian is
+\begin{align}
+    W_{3012} &= \begin{vmatrix}
+        B_{30} & B_{31} & B_{32} \\ \partial B_{30} & \partial B_{31} & \partial B_{32} \\ \partial^{2} B_{30} & \partial^{2} B_{31} & \partial^{2} B_{32}
+    \end{vmatrix} = \begin{vmatrix}
+        B_{30} & B_{31} & B_{32} \\ B_{32} & B_{30} & B_{31} \\ B_{31} & B_{32} & B_{30}
+    \end{vmatrix} \\
+    &= \left( B_{30} \right)^{3} + \left( B_{31} \right)^{3} + \left( B_{32} \right)^{3} - 3 B_{30} B_{31} B_{32}
+\end{align}
+Note that all Wronskian matrices are Toeplitz matrices.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Algebraic Formulae}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-...
+Recall that
+\begin{equation}
+    1 + \phi^{2} - \phi = 0
+\end{equation}
