@@ -15,7 +15,11 @@ This expression can be rearranged into
 \end{equation}
 This identity will be used extensively later.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Exponential Function}
+\section{Elementary Functions}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+A very quick review of three important kinds of elementary functions.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Exponential Function}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 The \textbf{exponential function} can be defined as a power series:
 \begin{equation}
@@ -45,7 +49,7 @@ This expression can be rearranged into
 \end{equation}
 This is a first-order differential equation; there is only one linearly-independent solution.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Hyperbolic Functions}
+\subsection{Hyperbolic Functions}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 The two basic \textbf{hyperbolic functions} can be defined as power series:
 \begin{align}
@@ -73,7 +77,7 @@ is
 \end{equation}
 These two hyperbolic functions are examples of elementary functions.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Trigonometric Functions}
+\subsection{Trigonometric Functions}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 The two basic \textbf{trigonometric functions} can be defined as alternating power series:
 \begin{align}
@@ -199,3 +203,64 @@ In terms of these functions, you have
     \sin(z) &= A_{21}(z)
 \end{align}
 The goal of these notes is to present explicit results involving the $B_{pq}(z)$ and $A_{pq}(z)$ functions for other values of $p$ and $q$. In this way, you can generalize these elementary functions.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Pochhammer Symbol}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+The Pochhammer symbol is
+\begin{equation}
+    \left(z\right)_{n} = \frac{\Gamma(z + n)}{\Gamma(z)} = \prod_{k = 0}^{n-1} \left(z + k\right) = \prod_{l = 0}^{n-1} \left(n - 1 + z - l\right)
+\end{equation}
+Equivalently, you have
+\begin{equation}
+    \Gamma(z + n) = \left(z\right)_{n} \Gamma(z)
+\end{equation}
+This appears in the expression
+\begin{equation}
+    \Gamma\left(pn+q+1\right) = \left(pn+1\right)_{q} \Gamma\left(pn+1\right)
+\end{equation}
+Note that
+\begin{equation}
+    \Gamma\left(pn+1\right) = \prod_{k = 0}^{pn - 1} \left(pn - k \right) = p^{pn} \prod_{k = 0}^{pn-1} \left(n - \frac{k}{p}\right)
+\end{equation}
+This can be written as a double product:
+\begin{equation}
+    \Gamma\left(pn+1\right) = p^{pn} \prod_{l = 0}^{n - 1} \prod_{m = 0}^{p-1} \left(n - \frac{m}{p} - l\right)
+\end{equation}
+Note that
+\begin{equation}
+    n - \frac{m}{p} - l = n - 1 + \left(1 - \frac{m}{p}\right) - l
+\end{equation}
+Thus
+\begin{equation}
+    \Gamma\left(pn+1\right) = p^{pn} \prod_{m = 0}^{p-1} \left(1 - \frac{m}{p}\right)_{n}
+\end{equation}
+For example, $p = 2$ gives
+\begin{equation}
+    \Gamma(2n+1) = (2n)! = 2^{2n} (1)_{n} \left(\frac{1}{2}\right)_{n}
+\end{equation}
+Similarly, $p = 3$ gives
+\begin{equation}
+    \Gamma(3n+1) = (3n)! = 3^{3n} (1)_{n} \left(\frac{1}{3}\right)_{n} \left(\frac{2}{3}\right)_{n}
+\end{equation}
+You also have
+\begin{equation}
+    \left(pn+1\right)_{q} = \prod_{k = 0}^{q-1} \left(pn + 1 + k\right) = p^{q} \prod_{k=0}^{q-1} \left(n + \frac{1 + k}{p}\right)
+\end{equation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Generalized Hypergeometric Function}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+The ${}_{0}F_{m}$ generalized hypergeometric function is defined as
+\begin{equation}
+    {}_{0}F_{m}\left[a_{0}, a_{1}, ..., a_{m-1}; z\right] = \sum_{n=0}^{\infty} \frac{1}{(a_{0})_{n}(a_{1})_{n}...(a_{m-1})_{n}} z^{n}
+\end{equation}
+Note that the usual definition of the generalized hypergeometric function includes a factorial factor that has been absorbed into the Pochhammer symbols in the denominator above.
+
+In terms of the ${}_{0}F_{m}$ generalize hypergeometric function, you have
+\begin{align}
+    B_{10}(z) &= \exp(z) = {}_{0}F_{1}\left[1; z\right] \\
+    B_{20}(z) &= \cosh(z) = {}_{0}F_{2}\left[1, \frac{1}{2}; \frac{z^{2}}{2^{2}} \right] \\
+    B_{30}(z) &= {}_{0}F_{3}\left[1, \frac{2}{3}, \frac{1}{3}; \frac{z^{3}}{3^{3}} \right] \\
+    B_{40}(z) &= {}_{0}F_{4}\left[1, \frac{3}{4}, \frac{1}{2}, \frac{1}{4}; \frac{z^{4}}{4^{4}}\right] \\
+    B_{50}(z) &= {}_{0}F_{5}\left[1, \frac{4}{5}, \frac{3}{5}, \frac{2}{5}, \frac{1}{5}; \frac{z^{5}}{5^{5}}\right] \\
+    B_{60}(z) &= {}_{0}F_{6}\left[1, \frac{5}{6}, \frac{2}{3}, \frac{1}{2}, \frac{1}{3}, \frac{1}{6}; \frac{z^{6}}{6^{6}}\right]
+\end{align}

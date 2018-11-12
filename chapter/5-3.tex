@@ -59,31 +59,6 @@ You find
     B_{32}(z) &= \frac{1}{3} \exp(z) - \frac{1}{3} \exp\left( -\frac{z}{2} \right) \cos\left( \frac{\sqrt{3}}{2} z \right) - \frac{1}{\sqrt{3}} \exp\left( -\frac{z}{2} \right) \sin\left( \frac{\sqrt{3}}{2} z \right)
 \end{align}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Properties}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Here are some important properties.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Special Values}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Note that
-\begin{align}
-    B_{30}(0) &= 1 \\
-    B_{31}(0) &= 0 \\
-    B_{32}(0) &= 0
-\end{align}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Real and Imaginary Parts}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-...
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Anti-Periodicity}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-...
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Periodicity}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-...
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Identities}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Here are some important identities.
@@ -177,3 +152,62 @@ Recall that
 \begin{equation}
     1 + \phi^{2} - \phi = 0
 \end{equation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Properties}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Here are some important properties.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Special Values}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Note that
+\begin{align}
+    B_{30}(0) = 1 && B_{31}(0) = 0 && B_{32}(0) = 0
+\end{align}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Real and Imaginary Parts}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Let $x$ and $y$ be real variables and $z = x + yi$ a complex variable. The real and imaginary parts of $B_{30}$ are
+\begin{align}
+    \Re\left[ B_{30}(z) \right] &= \frac{1}{3} \left( \Re\left[ \exp\left( z \right) \right] + \Re\left[ \exp\left( \phi^{2} z \right) \right] + \Re\left[ \exp\left( -\phi z \right) \right] \right) \\
+    \Im\left[ B_{30}(z) \right] &= \frac{1}{3} \left( \Im\left[ \exp\left( z \right) \right] + \Im\left[ \exp\left( \phi^{2} z \right) \right] + \Im\left[ \exp\left( -\phi z \right) \right] \right)
+\end{align}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Anti-Periodicity}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+From the addition formula, it follows that
+\begin{align}
+    B_{30}\left(z + \tau_{0}\right) &= B_{30}(z) B_{30}(\tau_{0}) + B_{31}(z) B_{32}(\tau_{0}) + B_{32}(z) B_{31}(\tau_{0}) \\
+    B_{31}\left(z + \tau_{1}\right) &= B_{30}(z) B_{31}(\tau_{1}) + B_{31}(z) B_{30}(\tau_{1}) + B_{32}(z) B_{32}(\tau_{1}) \\
+    B_{32}\left(z + \tau_{2}\right) &= B_{30}(z) B_{32}(\tau_{2}) + B_{31}(z) B_{31}(\tau_{2}) + B_{32}(z) B_{30}(\tau_{2})
+\end{align}
+You require that anti-periodicity be true for any value of $z$. Thus, you need
+\begin{align}
+    B_{30}(\tau_{0}) = -1 && B_{31}(\tau_{0}) = 0 && B_{32}(\tau_{0}) = 0 \\
+    B_{30}(\tau_{1}) = -1 && B_{31}(\tau_{1}) = 0 && B_{32}(\tau_{1}) = 0 \\
+    B_{30}(\tau_{2}) = -1 && B_{31}(\tau_{2}) = 0 && B_{32}(\tau_{2}) = 0
+\end{align}
+It appears it is safe to assume that
+\begin{equation}
+    \tau_{0} = \tau_{1} = \tau_{2} \equiv \tau
+\end{equation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Periodicity}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+From the addition formula, it follows that
+\begin{align}
+    B_{30}\left(z + \tau_{0}\right) &= B_{30}(z) B_{30}(\tau_{0}) + B_{31}(z) B_{32}(\tau_{0}) + B_{32}(z) B_{31}(\tau_{0}) \\
+    B_{31}\left(z + \tau_{1}\right) &= B_{30}(z) B_{31}(\tau_{1}) + B_{31}(z) B_{30}(\tau_{1}) + B_{32}(z) B_{32}(\tau_{1}) \\
+    B_{32}\left(z + \tau_{2}\right) &= B_{30}(z) B_{32}(\tau_{2}) + B_{31}(z) B_{31}(\tau_{2}) + B_{32}(z) B_{30}(\tau_{2})
+\end{align}
+You require that periodicity be true for any value of $z$. Thus, you need
+\begin{align}
+    B_{30}(\tau_{0}) = 1 && B_{31}(\tau_{0}) = 0 && B_{32}(\tau_{0}) = 0 \\
+    B_{30}(\tau_{1}) = 1 && B_{31}(\tau_{1}) = 0 && B_{32}(\tau_{1}) = 0 \\
+    B_{30}(\tau_{2}) = 1 && B_{31}(\tau_{2}) = 0 && B_{32}(\tau_{2}) = 0
+\end{align}
+It appears it is safe to assume that
+\begin{equation}
+    \tau_{0} = \tau_{1} = \tau_{2} \equiv \tau
+\end{equation}
+The case $\tau = 0$ (i.e. non-periodicity) solves these relations. I am not sure if there is a non-trivial value for the period.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

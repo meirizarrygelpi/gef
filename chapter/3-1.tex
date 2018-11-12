@@ -7,7 +7,52 @@ The 1-exponential function is among the simplest of the traditional elementary f
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 The 1-exponential function is
 \begin{equation}
-    B_{10}(z) = \sum_{n = 0}^{\infty} \frac{1}{\Gamma(n+1)} z^{n}
+    B_{10}(z) = \sum_{n = 0}^{\infty} \frac{1}{\Gamma(n+1)} z^{n} = \exp(z)
+\end{equation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Identities}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Here are some important identities.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Addition Formula}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+The addition formula is
+\begin{equation}
+    B_{10}(w + z) = B_{10}(w) B_{10}(z)
+\end{equation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{de Moivre Scaling Formula}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+For the 1-exponential case, the de Moivre scale factor is
+\begin{equation}
+    r_{21} = -1
+\end{equation}
+This leads to the following de Moivre scaling formula:
+\begin{equation}
+    B_{10}(-z) = \sum_{n = 0}^{\infty} \frac{(-1)^{n}}{\Gamma(n + 1)} z^{n} = A_{10}(z)
+\end{equation}
+Thus, a de Moivre scaling of $B_{10}$ gives the alternating function $A_{10}$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Differentiation Formula}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+The differentiation formula is
+\begin{equation}
+    \partial B_{10} = B_{10}
+\end{equation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Algebraic Formula}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Recall that
+\begin{equation}
+    r_{20} + r_{21} = 0
+\end{equation}
+Since
+\begin{equation}
+    \exp\left(r_{20} z\right) \exp\left(r_{21} z\right) = 1
+\end{equation}
+you also have
+\begin{equation}
+    B_{10}(z) A_{10}(z) = 1
 \end{equation}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Properties}
@@ -67,47 +112,10 @@ Since $B_{10}$ is anti-periodic with anti-period $\pi i$, this function is also 
     B_{10}(z + 2 \pi i) - B_{10}(z) = 0
 \end{equation}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Identities}
+\subsection{Rational Phase Shift}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Here are some important identities.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Addition Formula}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-The addition formula is
+Both anti-periodicity and periodicity are special cases of the rational phase shift. That is, let $m$ and $n$ be integers with $n \neq 0$. Then
 \begin{equation}
-    B_{10}(w + z) = B_{10}(w) B_{10}(z)
+    B_{10}\left(z + \frac{2\pi m i}{n}\right) = \exp\left( \frac{2\pi m i}{n} \right) B_{10}(z)
 \end{equation}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{de Moivre Scaling Formula}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-For the 1-exponential case, the de Moivre scale factor is
-\begin{equation}
-    r_{21} = -1
-\end{equation}
-This leads to the following de Moivre scaling formula:
-\begin{equation}
-    B_{10}(-z) = \sum_{n = 0}^{\infty} \frac{(-1)^{n}}{\Gamma(n + 1)} z^{n} = A_{10}(z)
-\end{equation}
-Thus, a de Moivre scaling of $B_{10}$ gives the alternating function $A_{10}$.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Differentiation Formula}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-The differentiation formula is
-\begin{equation}
-    \partial B_{10} = B_{10}
-\end{equation}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Algebraic Formula}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Recall that
-\begin{equation}
-    r_{20} + r_{21} = 0
-\end{equation}
-Since
-\begin{equation}
-    \exp\left(r_{20} z\right) \exp\left(r_{21} z\right) = 1
-\end{equation}
-you also have
-\begin{equation}
-    B_{10}(z) A_{10}(z) = 1
-\end{equation}
+Shifting the argument variable by a rational multiple of $2 \pi i$ gives the 1-exponential function up to a pure phase factor.

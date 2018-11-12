@@ -47,46 +47,6 @@ Explicitly, you have
     B_{21}(z) &= \frac{1}{2} \left[ \exp(z) - \exp(-z) \right] = \sinh(z)
 \end{align}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Properties}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Here are some important properties.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Special Values}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Note that
-\begin{align}
-    B_{20}(z) &= 1 & B_{21}(z) &= 0
-\end{align}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Real and Imaginary Parts}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Let $x$ and $y$ be real variables. The real and imaginary parts of $B_{20}$ are
-\begin{align}
-    \Re\left[ B_{20}(x + yi) \right] &= \cosh(x) \cos(y) \\
-    \Im\left[ B_{20}(x + yi) \right] &= \sinh(x) \sin(y)
-\end{align}
-The real and imaginary parts of $B_{21}$ are
-\begin{align}
-    \Re\left[ B_{21}(x + yi) \right] &= \sinh(x) \cos(y) \\
-    \Im\left[ B_{21}(x + yi) \right] &= \cosh(x) \sin(y)
-\end{align}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Anti-Periodicity}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Both $B_{20}$ and $B_{21}$ are anti-periodic:
-\begin{align}
-    B_{20}(z + \pi i) + B_{20}(z) &= 0 & B_{21}(z + \pi i) + B_{21}(z) &= 0
-\end{align}
-The anti-period is $\pi i$.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Periodicity}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Both $B_{20}$ and $B_{21}$ are periodic:
-\begin{align}
-    B_{20}(z + 2\pi i) - B_{20}(z) &= 0 & B_{21}(z + 2\pi i) - B_{21}(z) &= 0
-\end{align}
-The period is $2\pi i$.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Identities}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Here are some important identities.
@@ -238,3 +198,54 @@ The reciprocal of the cardinal function,
     D_{21}(z) \equiv \frac{1}{C_{21}(z)} = \frac{z}{B_{21}(z)}
 \end{equation}
 is another good candidate for a probability distribution.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Properties}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Here are some important properties.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Special Values}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Note that
+\begin{align}
+    B_{20}(0) &= 1 & B_{21}(0) &= 0
+\end{align}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Real and Imaginary Parts}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Let $x$ and $y$ be real variables. The real and imaginary parts of $B_{20}$ are
+\begin{align}
+    \Re\left[ B_{20}(x + yi) \right] &= \cosh(x) \cos(y) \\
+    \Im\left[ B_{20}(x + yi) \right] &= \sinh(x) \sin(y)
+\end{align}
+The real and imaginary parts of $B_{21}$ are
+\begin{align}
+    \Re\left[ B_{21}(x + yi) \right] &= \sinh(x) \cos(y) \\
+    \Im\left[ B_{21}(x + yi) \right] &= \cosh(x) \sin(y)
+\end{align}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Anti-Periodicity}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Both $B_{20}$ and $B_{21}$ are anti-periodic:
+\begin{align}
+    B_{20}(z + \pi i) + B_{20}(z) &= 0 & B_{21}(z + \pi i) + B_{21}(z) &= 0
+\end{align}
+The anti-period is $\pi i$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Periodicity}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Both $B_{20}$ and $B_{21}$ are periodic:
+\begin{align}
+    B_{20}(z + 2\pi i) - B_{20}(z) &= 0 & B_{21}(z + 2\pi i) - B_{21}(z) &= 0
+\end{align}
+The period is $2\pi i$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Quarter Period Shift}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Note that
+\begin{align}
+    B_{20}\left(z + \frac{\pi i}{2}\right) - i B_{21}(z) = 0 && B_{21}\left(z + \frac{\pi i}{2}\right) - i B_{20}(z) = 0
+\end{align}
+and also
+\begin{align}
+    B_{20}\left(z - \frac{\pi i}{2}\right) + i B_{21}(z) = 0 && B_{21}\left(z - \frac{\pi i}{2}\right) + i B_{20}(z) = 0
+\end{align}
