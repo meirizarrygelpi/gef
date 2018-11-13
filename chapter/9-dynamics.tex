@@ -1,0 +1,112 @@
+% Copyright 2018 Melvin Eloy Irizarry-Gelpí
+\chapter{Dynamical Systems}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Here are some dynamical systems where the solutions to the equations of motion are generalized elementary functions.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{One-Body System}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Consider the following one-body dynamical system:
+\begin{equation}
+    \dot{q}_{0} = q_{0}
+\end{equation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Two-Body System}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Consider the following two-body dynamical system:
+\begin{align}
+    \dot{q}_{0} = q_{1} && \dot{q}_{1} = q_{0}
+\end{align}
+In matrix form, you have:
+\begin{equation}
+    \begin{bmatrix}
+        \dot{q}_{0} \\ \dot{q}_{1}
+    \end{bmatrix} = \begin{bmatrix}
+        0 & 1 \\
+        1 & 0
+    \end{bmatrix} \begin{bmatrix}
+        q_{0} \\ q_{1}
+    \end{bmatrix}
+\end{equation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Three-Body System}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Consider the following three-body dynamical system:
+\begin{align}
+    \dot{q}_{0} = q_{2} && \dot{q}_{1} = q_{0} && \dot{q}_{2} = q_{1}
+\end{align}
+In matrix form, you have:
+\begin{equation}
+    \begin{bmatrix}
+        \dot{q}_{0} \\ \dot{q}_{1} \\ \dot{q}_{2}
+    \end{bmatrix} \begin{bmatrix}
+        0 & 0 & 1 \\
+        1 & 0 & 0 \\
+        0 & 1 & 0
+    \end{bmatrix} \begin{bmatrix}
+        q_{0} \\ q_{1} \\ q_{2}
+    \end{bmatrix}
+\end{equation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Four-Body System}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Consider the following four-body dynamical system:
+\begin{align}
+    \dot{q}_{0} = q_{3} && \dot{q}_{1} = q_{0} && \dot{q}_{2} = q_{1} && \dot{q}_{3} = q_{2}
+\end{align}
+In matrix form, you have:
+\begin{equation}
+    \begin{bmatrix}
+        \dot{q}_{0} \\ \dot{q}_{1} \\ \dot{q}_{2} \\ \dot{q}_{3}
+    \end{bmatrix} \begin{bmatrix}
+        0 & 0 & 0 & 1 \\
+        1 & 0 & 0 & 0 \\
+        0 & 1 & 0 & 0 \\
+        0 & 0 & 1 & 0
+    \end{bmatrix} \begin{bmatrix}
+        q_{0} \\ q_{1} \\ q_{2} \\ q_{3}
+    \end{bmatrix}
+\end{equation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Five-Body System}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Consider the following five-body dynamical system:
+\begin{align}
+    \dot{q}_{0} = q_{4} && \dot{q}_{1} = q_{0} && \dot{q}_{2} = q_{1} && \dot{q}_{3} = q_{2} && \dot{q}_{4} = q_{3}
+\end{align}
+In matrix form, you have:
+\begin{equation}
+    \begin{bmatrix}
+        \dot{q}_{0} \\ \dot{q}_{1} \\ \dot{q}_{2} \\ \dot{q}_{3} \\ \dot{q}_{4}
+    \end{bmatrix} \begin{bmatrix}
+        0 & 0 & 0 & 0 & 1 \\
+        1 & 0 & 0 & 0 & 0 \\
+        0 & 1 & 0 & 0 & 0 \\
+        0 & 0 & 1 & 0 & 0 \\
+        0 & 0 & 0 & 1 & 0
+    \end{bmatrix} \begin{bmatrix}
+        q_{0} \\ q_{1} \\ q_{2} \\ q_{3} \\ q_{4}
+    \end{bmatrix}
+\end{equation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Six-Body System}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Consider the following six-body dynamical system:
+\begin{align}
+    \dot{q}_{0} = q_{5} && \dot{q}_{1} = q_{0} && \dot{q}_{2} = q_{1} && \dot{q}_{3} = q_{2} && \dot{q}_{4} = q_{3} && \dot{q}_{5} = q_{4}
+\end{align}
+In matrix form, you have:
+\begin{equation}
+    \begin{bmatrix}
+        \dot{q}_{0} \\ \dot{q}_{1} \\ \dot{q}_{2} \\ \dot{q}_{3} \\ \dot{q}_{4} \\ \dot{q}_{5}
+    \end{bmatrix} \begin{bmatrix}
+        0 & 0 & 0 & 0 & 0 & 1 \\
+        1 & 0 & 0 & 0 & 0 & 0 \\
+        0 & 1 & 0 & 0 & 0 & 0 \\
+        0 & 0 & 1 & 0 & 0 & 0 \\
+        0 & 0 & 0 & 1 & 0 & 0 \\
+        0 & 0 & 0 & 0 & 1 & 0
+    \end{bmatrix} \begin{bmatrix}
+        q_{0} \\ q_{1} \\ q_{2} \\ q_{3} \\ q_{4} \\ q_{5}
+    \end{bmatrix}
+\end{equation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
